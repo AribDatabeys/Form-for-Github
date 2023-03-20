@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOKA Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="wrapper">
+            <img class="ooka-logo"
+                src="https://8787645.fs1.hubspotusercontent-na1.net/hubfs/8787645/Group%2039869.svg" />
+            {{#if message}}
+            <p class="message">A customer with the same email address already exists in an associated website.
+                and try
+                again.</p>
+            {{/if}}
+            <p class="message hide-input" id="Pmessage">The password needs at least 8 characters (1 Digit,1 uppercase, 1
+                lowercase). Create a new password
+                and try
+                again.</p>
+            <form action="/auth" method="post">
+                <label>First Name<span class="star">*</span></label>
+                <input type=text placeholder="First Name" id="fname" name="firstname" value="" required>
+                <label>Last Name<span class="star">*</span></label>
+                <input type=text placeholder="Last Name" id="lname" name="lastname" value="">
+                <div class="Checkout_dob__11BbL dob form-group">
+                    <select id="day" class="form-select dropdown-day" onchange="leaveChange()" name="day">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                    <select id="month" class="form-select dropdown-month" onchange="leaveChange()" name="month">
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <div class="input-year">
+                        <input type="text" id="year" maxlength="4" pattern="\d{4}" placeholder="Year" name="year"
+                            required>
+                    </div>
+                </div>
+                <p class="invalid-date-hide" id="above">Invalid Date or Age should be greater than 18</p>
+
+                <label>Email<span class="star">*</span></label>
+                <input type=email placeholder="Email" id="email" name="email" value="">
+                <label>Password<span class="star">*</span></label>
+                <input type=password placeholder="Password" id="password" name="password" value="" minlength="8"
+                    required pattern="(?=.*\d)(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+
+                <div class="terms">
+                    <img src="https://25636661.fs1.hubspotusercontent-eu1.net/hubfs/25636661/icons8-about-48.png" />
+                    <label for="checkbox">Passwords must be longer than 8 characters, include uppercase, lowercase and
+                        numbers.</label>
+                </div>
+                <p class="age-confirmation">I confirm that I'm 18 years old or above</p>
+                <button class="button" id="button" type="submit">Sign Up</button>
+            </form>
+            <div class="account">
+                Do you have an account? <a href="#">Log In</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="js/file.js"></script>
